@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+ background-color: hsl(217, 54%, 11%);
+}
+
+.card{
+    max-width: 375px;
+    margin-inline: auto;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    background-color: hsl(216, 50%, 16%);
+    color:hsl(215, 51%, 70%)
+}
+
+.card hr{
+    background-color: red;
+}
+
+.card-accent-light{
+    color:hsl(0, 0%, 100%)
+}
+.card-action{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-action span:first-of-type{
+    color:hsl(178, 100%, 50%)
+}
+.card-footer{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.card-footer img{
+    max-width: 32px;
+    height: 32px;
+    border-color:white; 
+    
+}
+.card img{
+    width: 100%;
+}
