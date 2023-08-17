@@ -1,50 +1,246 @@
+/* RESET */
 *,
 *::after,
 *::before{
     box-sizing: border-box;
 }
 
-body{
-    min-height: 100vh;
- background-color: hsl(217, 54%, 11%);
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+/* Set core body defaults */
+
+body{
+    min-height: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+/* Make images easier to work with */
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* END OF RESET */
+
+/* UTILITY CLASS */
+
+.flex {
+    display: flex;
+}
+
+/* EMD OF UTILITY CLASS */
+
+body{
+    background-color: hsl(217, 54%, 11%);
+    color: white;
+}
+
+main{
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    min-height: 3vh;
+}
 .card{
-    max-width: 375px;
+    max-width: 328px;
+    max-height: 50%;
     margin-inline: auto;
     font-family: 'Outfit', sans-serif;
-    font-size: 18px;
+    font-size: 1rem;
     background-color: hsl(216, 50%, 16%);
-    color:hsl(215, 51%, 70%)
+    color:hsl(215, 51%, 70%);
+    padding: 1.5em;
+    border-radius: 1em;
+    font-weight: 300;
+    box-shadow: 1px;
+}
+
+
+
+/* .card-img:hover{
+    opacity: 0.3;
+} */
+
+
+.card h1{
+    font-weight: 600;
+    font-size: 22px;
+    margin: 1em 0 .5em 0;
+}
+
+.accent-hover:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+.card img{
+    width: 100%;
+    border-radius: .5em;
+}
+
+.card-img-container{
+    position:relative;
+    width: 100%;
+    cursor: pointer;
+}
+.card-img-overlay{
+    transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+   top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+  text-align: center;
+background-color: hsl(178, 100%, 50%);
+    border-radius: .5em;
+}
+
+.card-img-overlay-img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50px;
+    opacity: 0;
+}
+
+.card-img-container:hover .card-img-overlay{
+    opacity: .5;
+}
+.card-img-container:hover .card-img-overlay-img{
+    opacity: 1;
 }
 
 .card hr{
-    background-color: red;
+    background-color:hsl(215, 32%, 27%);
+    height: .5px;
+    border:none
 }
 
 .card-accent-light{
-    color:hsl(0, 0%, 100%)
+    color:hsl(0, 0%, 100%);
 }
 .card-action{
     display: flex;
     justify-content: space-between;
+    margin: 1em 0;
 }
 
-.card-action span:first-of-type{
-    color:hsl(178, 100%, 50%)
+.card-action div{
+    display: flex;
+    /* font-size:14px; */
+    align-items: center;
+}
+
+.card-action img{
+    max-width: 16px;
+    margin-right: .45rem;
+}
+.card-action div:first-of-type img{
+    max-width: 10px;
+
+}
+
+
+.card-action div:first-of-type{
+    color:hsl(178, 100%, 50%);
+    flex-grow: 1;
+    font-weight: 600;
 }
 .card-footer{
     display: flex;
     text-align: center;
     align-items: center;
+    margin-top: 1em;
+    /* letter-spacing: .5px; */
 }
 
 .card-footer img{
     max-width: 32px;
     height: 32px;
-    border-color:white; 
+    border: 1px solid white;
+    margin-right: 1rem;
+    border-radius:1em;
     
 }
-.card img{
-    width: 100%;
+
+.card-footer span{
+    color: white;
+}
+
+/* larger screen */
+@media only screen and (min-width: 601px) {
+
+ .card{
+    max-width: 350px;
+    font-size: 18px;
+    padding: 1.35em;
+ }
+
+ .card h1{
+    margin: 1em 0 .6em 0;
+ }
+
+
+
+ .card-action,
+ .card-footer{
+    font-size: 16px;
+ }
+
+ .card-action{
+    margin: 1.3em 0;
+ }
+ .card-footer{
+    margin-bottom: .5em;
+ }
 }
