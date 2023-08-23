@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Results summary component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,33 +18,77 @@
   </style>
 </head>
 <body>
+<main>
+  <article class="result-container flex">
 
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
   
-  Summary
+  <section class="result-rating-container">
 
-  Reaction
-  80 / 100
+    <h1>Your Result</h1>
 
-  Memory
-  92 / 100
+    <div class="result-rating">
 
-  Verbal
-  61 / 100
+      <h1>76</h1>
+      of 100
+    </div>
+    <div class="result-description">
 
-  Visual
-  72 / 100
+      <h1>Great</h1>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+  </section>
+  <section class="summary-container">
 
-  Continue
+    <h1>Summary</h1>
+    
+    <div class="summary-list">
+    <div class="flex light-red summary-criteria">
+      <div class="flex summary-criteria-detail">
+        <img src="./assets/images/icon-reaction.svg"  alt="lightning">
+        Reaction
+      </div>
+      <div class="summary-criteria-score"><span>80</span> / 100</div>
+      
+    </div>
+    
+    <div class="flex orange-yellow summary-criteria">
+      <div class="flex summary-criteria-detail">
+        <img src="./assets/images/icon-memory.svg"  alt="brain">
+        Memory</div>
+        <div class="summary-criteria-score"><span>92</span> / 100</div>
+      
+    </div>
+    
+    <div class="flex green-teal summary-criteria">
+      <div class="flex summary-criteria-detail">
+        <img src="./assets/images/icon-verbal.svg"  alt="chat-bubble">
+        Verbal</div>
+        <div class="summary-criteria-score"><span>61</span> / 100</div>
+      
+    </div>
   
+    <div class="flex cobalt-blue summary-criteria">
+      <div class="flex summary-criteria-detail">
+        <img src="./assets/images/icon-visual.svg"  alt="eye">
+        Visual</div>
+      <div class="summary-criteria-score"><span>72</span> / 100</div>
+    </div>
+  </div>
+  
+    <button class="summary-button">Continue</button>
+    
+  
+    
+  </section>
+</article>
+</main>
+<footer>
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+</footer>
+  
 </body>
 </html>
