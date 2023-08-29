@@ -110,19 +110,19 @@ select {
 /* COLORS */
 
 .light-red{
-    background-color: hsla(var(--light-red),0.1);
+    background-color: hsla(var(--light-red),0.050);
     color: hsl(var(--light-red));
 } 
 .orange-yellow{
-    background-color: hsla(var(--orange-yellow),0.1);
+    background-color: hsla(var(--orange-yellow),0.050);
     color: hsl(var(--orange-yellow));
 } 
 .green-teal{
-    background-color: hsla(var(--green-teal),0.1);
+    background-color: hsla(var(--green-teal),0.050);
     color: hsl(var(--green-teal));
 } 
 .cobalt-blue{
-    background-color: hsla(var(--cobalt-blue),0.1);
+    background-color: hsla(var(--cobalt-blue),0.050);
     color: hsl(var(--cobalt-blue));
 } 
 /* END OF COLORS */
@@ -132,10 +132,11 @@ main{
     color: hsl(241, 100%, 89%);
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 500;
-    
+    margin-inline: auto;
 }
 .result-container{
     flex-direction:column;
+    margin-inline:auto;
 }
 
 .result-container h1{
@@ -145,30 +146,34 @@ main{
 
 .result-rating-container{
     border-radius: 0 0 2em 2em;
-    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    background-image: linear-gradient(hsla(252, 100%, 67%, 1),hsla(241, 81%, 54%,1));
     text-align: center;
     padding: 1.5em;
 }
 
 .result-rating-container > h1{
-    margin-bottom: 1em;
+    margin-bottom: 1.150em;
     color: hsl(241, 100%, 89%);
     font-size: 18px;
+    font-weight: 700;
 }
 
 .result-rating{
     background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
     border-radius: 50%;
-    max-width: 43%;
+    max-width: calc((100vw - 3.2em) *  0.433);
+    max-height: calc((100vw - 3.2em) *  0.433);
     margin-inline: auto;
     text-align: center;
     padding: 1.6em;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .result-rating h1{
     font-size: 3.5rem;
-    line-height: 4.4rem;
+    line-height: 4.2rem;
+    margin-top: 0.2em;
 }
 
 .result-description{
@@ -177,50 +182,152 @@ main{
 
 .result-description h1{
     font-size: 1.5rem;
+    margin-top: 0.3em;
 }
 
+.result-description p {
+    margin-top: .250em;
+    line-height: 1.3;
+}
+
+/* Summary */
+
 .summary-container{
-    padding: 1.5em 2em;
+    padding: 1.5em 1.8em;
 }
 
 .summary-container h1{
     color: black;
+    font-size: 1.150em;
+    margin: 0 .2em;
 }
 
 
-.summary-llist{
-    margin: 1em 0;
+.summary-list{
+    margin: 1.2em 0 1em 0;
 }
+
 .summary-criteria{
     border-radius: .5em;
-    padding: 1em;
+    padding: 1em 1.1em;
     justify-content: space-between;
     margin: 1em 0em;
 }
 
+.summary-list > div:first-child{
+    margin-top: 0px;
+}
+
+.summary-list > div:last-child{
+    margin-bottom: 0px;
+}
 .summary-criteria-detail{
     align-items: center;
 }
 
 .summary-criteria-detail img{
-    margin-right: .5em;
+    margin-right: .75em;
 }
 
 .summary-criteria-score{
-    color:hsl(241, 100%, 89%)
+    color:hsl(224, 30%, 27%, .5);
 }
 
 .summary-criteria-score span{
-    color: hsl(224, 30%, 27%)
+    color: hsl(224, 30%, 27%);
+    margin-right: .3em;
 }
 .summary-button{
     width: 100%;
-    padding: 1em;
+    padding: .75em;
     background-color: hsl(224, 30%, 27%);
     color: white;
     border-radius: 5em;
+    margin-top: .5em;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.summary-button:hover{
+    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
 }
 /* larger screen */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 376px) {
 
+    main{
+        display: flex;
+        align-items: center;
+    }
+    .result-container{
+        flex-direction:row;
+        max-width: 51%;
+        border-radius: 2em;
+        box-shadow: hsl(221, 100%, 96%) 20px 20px 20px ;
+        max-width: 734px;
+    }
+
+    .result-container > section{
+        flex: 1;
+    }
+
+    .result-rating-container{
+        border-radius: 2em;
+        padding: 2.45em 2.2em;
+        min-width: 368px;;
+    }
+
+    .result-rating-container h1{
+        font-size: 1.45rem;
+    }
+
+    .result-rating-container > h1{
+        margin-bottom: 1.4em;
+    }
+    .result-rating{
+        max-width: 200px;
+        height: 200px;
+        padding: 3.4em 0;
+
+    }
+
+    .result-rating h1{
+        font-size: 4.5rem;
+        margin-bottom: .050em;
+    }
+
+    .result-rating span{
+        font-size: 1.1rem;
+    }
+
+    .result-description h1{
+        font-size: 2rem;
+    }
+
+    .result-description p {
+        font-size: 1.1rem;
+        margin: .5em .5em 0em;
+    }
+
+    .summary-container{
+        padding: 2em 2.45em;
+    }
+
+    .summary-container h1{
+        font-size: 1.5rem;
+        margin: 0 0.1em;
+    }
+
+
+    .summary-list{
+        margin: 1.5em 0
+    }
+
+    .summary-criteria{
+        font-size: 1.1rem;
+        padding: .82em 1em;
+    }
+
+    .summary-button{
+        margin-top: 1em;
+    }
 }
